@@ -61,3 +61,12 @@ Gunakan berkas bash script yang disediakan untuk melakukan kompilasi otomatis:
    ```bash
    ./podoae
    ```
+
+---
+
+## 🔁 CI/CD dengan GitHub Actions
+
+Proyek ini dilengkapi dengan pipeline CI/CD menggunakan **GitHub Actions** yang dikonfigurasi pada berkas `.github/workflows/build.yml`. Setiap kali Anda melakukan push atau pull request ke branch utama (`master` atau `main`), alur kerja otomatis akan berjalan untuk membangun aplikasi:
+- **podoae-linux-x64**: Build Linux native executable 64-bit.
+- **podoae-windows-x64**: Build Windows 64-bit executable (`podoae.exe`) menggunakan kompilasi silang `mingw-w64`. Artifact build ini dikemas bersama `SDL2.dll` dalam sebuah arsip ZIP yang siap dieksekusi di Windows.
+
