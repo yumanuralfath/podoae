@@ -24,7 +24,7 @@ Proyek ini dirancang sebagai sarana belajar pemrograman C, penataan antarmuka pe
 Kode program telah dipisahkan secara modular untuk mempermudah pemeliharaan:
 
 - [main.c](file:///home/yuma/Project/c_project/podoae/main.c): Mengatur inisialisasi SDL2/OpenGL, penanganan input event, serta penggambaran antarmuka grafis (UI rendering).
-- [pomodoro.h](file:///home/yuma/Project/c_project/podoae/pomodoro.h) / [pomodoro.c](file:///home/yuma/Project/c_project/podoae/pomodoro.c): Berisi seluruh logika status aplikasi, penghitungan waktu (tick), transisi mode otomatis, dan validasi pengaturan timer.
+- [podoae.h](file:///home/yuma/Project/c_project/podoae/podoae.h) / [podoae.c](file:///home/yuma/Project/c_project/podoae/podoae.c): Berisi seluruh logika status aplikasi, penghitungan waktu (tick), transisi mode otomatis, dan validasi pengaturan timer.
 - **Include/**: Folder pustaka eksternal seperti `microui` dan berkas pendukung `renderer` (SDL2 + OpenGL renderer).
 
 ---
@@ -67,6 +67,6 @@ Gunakan berkas bash script yang disediakan untuk melakukan kompilasi otomatis:
 ## 🔁 CI/CD dengan GitHub Actions
 
 Proyek ini dilengkapi dengan pipeline CI/CD menggunakan **GitHub Actions** yang dikonfigurasi pada berkas `.github/workflows/build.yml`. Setiap kali Anda melakukan push atau pull request ke branch utama (`master` atau `main`), alur kerja otomatis akan berjalan untuk membangun aplikasi:
-- **podoae-linux-x64**: Build Linux native executable 64-bit.
-- **podoae-windows-x64**: Build Windows 64-bit executable (`podoae.exe`) menggunakan kompilasi silang `mingw-w64`. Artifact build ini dikemas bersama `SDL2.dll` dalam sebuah arsip ZIP yang siap dieksekusi di Windows.
+- **podoae-linux-x64**: Build Linux native executable 64-bit (`podoae-linux`).
+- **podoae-windows-x64**: Build Windows 64-bit executable (`podoae.exe`). Build ini dirilis langsung bersama berkas `SDL2.dll` yang dibutuhkan tanpa dikemas dalam format ZIP.
 

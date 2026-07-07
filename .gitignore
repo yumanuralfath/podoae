@@ -1,0 +1,15 @@
+# Compiled binaries
+podoae
+podoae-linux
+podoae.exe
+podoae-windows-x64.zip
+SDL2.dll
+
+# Build files / folders
+SDL2-2.30.3/
+SDL2-devel-2.30.3-mingw.tar.gz
+*.o
+
+# IDE / system files
+.vscode/
+.DS_Store

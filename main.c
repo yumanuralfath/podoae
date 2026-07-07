@@ -1,5 +1,5 @@
 #include "microui/microui.h"
-#include "pomodoro.h"
+#include "podoae.h"
 #include "renderer/renderer.h"
 #include <SDL2/SDL.h>
 #include <stdio.h>
@@ -32,7 +32,13 @@ static int uint8_slider(mu_Context *ctx, unsigned char *value, int low,
 static void dashboard_window(mu_Context *ctx) {
   int opts =
       MU_OPT_NOTITLE | MU_OPT_NORESIZE | MU_OPT_NOFRAME | MU_OPT_NOSCROLL;
-  if (mu_begin_window_ex(ctx, "Podoae - Pomodoro Dashboard",
+  char title_buf[128];
+#ifdef PODOAE_VERSION
+  snprintf(title_buf, sizeof(title_buf), "Podoae v%s - Pomodoro Dashboard", PODOAE_VERSION);
+#else
+  snprintf(title_buf, sizeof(title_buf), "Podoae - Pomodoro Dashboard");
+#endif
+  if (mu_begin_window_ex(ctx, title_buf,
                          mu_rect(0, 0, 800, 600), opts)) {
     mu_Container *win = mu_get_current_container(ctx);
     win->rect.x = 0;
